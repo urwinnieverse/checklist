@@ -1,0 +1,123 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: fixed;
+    background-color: #FFF1F1;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+#paper{
+
+display: flex; 
+flex-direction: column;
+justify-content: center; 
+align-items: center;  
+height: max-content;
+min-height: 100px;
+width: 50%;
+background-color: white;
+margin: 50px;
+padding: 20px;
+gap: 10px;
+border: #dda6a9 3px solid;
+}
+
+#task-container{
+    width: 100%;
+    max-height: 60vh;  /* limits height for scrolling */
+    overflow-y: auto;  /* only tasks scroll */
+}
+#title{
+
+    font-size: 50px;
+    margin: 20px;
+    margin-top: 0px;
+    font-family: Sour Gummy;
+    font-weight: 400;
+    font-style: italic;
+
+}
+
+#taskInput{
+
+    height: 30px;
+    border: #dda6a9 3px solid;
+    width: 50%;               
+    padding: 8px 12px;     
+    border-radius: 10px;     
+    box-sizing: border-box;  
+    font-size: 1em;          
+    outline: none; 
+}
+
+#add{
+
+    height: 50px;
+    border: #dda6a9 3px solid;
+    background-color: white;
+    width: 50%;               
+    padding: 8px 12px;     
+    border-radius: 10px;     
+    box-sizing: border-box;  
+    font-size: 125%;          
+    outline: none; 
+    margin: 20px;
+    margin-top: 0px;
+    margin-bottom: 30px;
+    font-family: Sour Gummy;
+    font-weight: 400;
+    font-style: italic;
+
+
+}
+
+ul{
+
+    list-style-type: none;
+
+}
+.list{
+
+    width: 80%;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin:10px;
+    border-bottom: rgb(167, 166, 166) 2px solid ;
+    gap: 5%;
+
+}
+.task-check{
+
+    transform: scale(1.25);
+    background-color: rgba(255,255,255,0.75); 
+    accent-color: pink;
+    content:"/2713";
+    border: #dda6a9 3px solid ;
+
+}
+.task-text{
+ 
+    font-size: 150%;
+    color: rgb(100, 100, 100);
+    flex: 1;
+    font-family: Sour Gummy;
+    font-weight: 400;
+    font-style: italic;
+
+
+}
+.trash-icon{
+    background: none;
+    background-color: none;
+    border: none;
+    font-size: 125%;
+    width: auto;
+    cursor: pointer;
+}
