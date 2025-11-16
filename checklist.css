@@ -55,6 +55,14 @@ border: #dda6a9 3px solid;
     outline: none; 
 }
 
+#taskInput::placeholder{
+
+    font-family: Sour Gummy;
+    font-weight: 400;
+    font-style: italic;
+
+}
+
 #add{
 
     height: 50px;
@@ -120,4 +128,5 @@ ul{
     font-size: 125%;
     width: auto;
     cursor: pointer;
+
 }
