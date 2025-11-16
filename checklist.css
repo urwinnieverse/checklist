@@ -27,6 +27,13 @@ gap: 10px;
 border: #dda6a9 3px solid;
 }
 
+@media (max-width: 600px) {
+    #paper {
+        width: 80%;
+        padding: 20px;
+    }
+}
+
 #task-container{
     width: 100%;
     max-height: 60vh;  /* limits height for scrolling */
@@ -130,3 +137,4 @@ ul{
     cursor: pointer;
 
 }
+
