@@ -1,3 +1,15 @@
+
+:root{
+
+--bg:white;
+--border:black;
+--check: white;
+--temp: #809eb9;
+--tep2:#edca07dd;
+--te:#ff908a;
+
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -5,10 +17,36 @@ body {
     align-items: center;
     height: 100vh;
     background: fixed;
-    background-color: #FFF1F1;
+    background-color: var(--bg);
     margin-left: auto;
     margin-right: auto;
 
+}
+
+#themeSelect {
+
+position: absolute; 
+  top: 5%;           
+  right: 5%;      
+  z-index: 1000; 
+  appearance: none;
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: 2px solid var(--border); /* match your theme border */
+  background-color: white;
+  font-size: 1em;
+  cursor: pointer;
+  width:45px;
+  list-style: none;
+  justify-self:right;;
+}
+
+
+#themeSelect option {
+  color:rgb(100, 100, 100);           /* text color inside dropdown */
+  background-color: white; /* background of each option */
+  border: var(--border) 2px solid;
+  
 }
 
 #paper{
@@ -24,14 +62,7 @@ background-color: white;
 margin: 50px;
 padding: 20px;
 gap: 10px;
-border: #dda6a9 3px solid;
-}
-
-@media (max-width: 600px) {
-    #paper {
-        width: 80%;
-        padding: 20px;
-    }
+border: var(--border) 3px solid;
 }
 
 #task-container{
@@ -53,7 +84,7 @@ border: #dda6a9 3px solid;
 #taskInput{
 
     height: 30px;
-    border: #dda6a9 3px solid;
+    border: var(--border) 3px solid;
     width: 50%;               
     padding: 8px 12px;     
     border-radius: 10px;     
@@ -62,18 +93,10 @@ border: #dda6a9 3px solid;
     outline: none; 
 }
 
-#taskInput::placeholder{
-
-    font-family: Sour Gummy;
-    font-weight: 400;
-    font-style: italic;
-
-}
-
 #add{
 
     height: 50px;
-    border: #dda6a9 3px solid;
+    border: var(--border) 3px solid;
     background-color: white;
     width: 50%;               
     padding: 8px 12px;     
@@ -88,6 +111,13 @@ border: #dda6a9 3px solid;
     font-weight: 400;
     font-style: italic;
 
+
+}
+#taskInput::placeholder{
+
+    font-family: Sour Gummy;
+    font-weight: 400;
+    font-style: italic;
 
 }
 
@@ -112,9 +142,9 @@ ul{
 
     transform: scale(1.25);
     background-color: rgba(255,255,255,0.75); 
-    accent-color: pink;
+    accent-color: var(--check);
     content:"/2713";
-    border: #dda6a9 3px solid ;
+    border: var(--border) 3px solid ;
 
 }
 .task-text{
@@ -135,6 +165,4 @@ ul{
     font-size: 125%;
     width: auto;
     cursor: pointer;
-
 }
-
