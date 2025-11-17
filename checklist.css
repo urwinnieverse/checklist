@@ -13,21 +13,18 @@
 body {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;   /* <— FIX */
     align-items: center;
     min-height: 100vh;
     background: fixed;
     background-color: var(--bg);
-    margin-left: auto;
-    margin-right: auto;
+    margin:0;
 
 }
 
 @media (max-width: 600px) {
     #paper {
-        width: 90%;
-        padding: 10px;
-        margin:10px;
+        width: 80%;
     }
 }
 
@@ -174,8 +171,3 @@ ul{
     width: auto;
     cursor: pointer;
 }
-
-
-
-
-
