@@ -24,9 +24,12 @@ body {
 
 @media (max-width: 600px) {
     #paper {
-        width: 80%;
+        width: 90%;
+        margin: 20px auto;   /* center + remove huge margin */
+        padding: 20px;
     }
 }
+
 
 #themeSelect {
 
@@ -171,3 +174,4 @@ ul{
     width: auto;
     cursor: pointer;
 }
+
