@@ -26,8 +26,8 @@ body {
 @media (max-width: 600px) {
     #paper {
         width: 90%;
-        padding: 20px;
-        marging:20px;
+        padding: 10px;
+        marging:10px;
     }
 }
 
@@ -174,5 +174,6 @@ ul{
     width: auto;
     cursor: pointer;
 }
+
 
 
