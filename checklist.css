@@ -1,181 +1,187 @@
+   :root {
+     --bg: white;
+     --border: black;
+     --check: white;
+     --temp: #809eb9;
+     --tep2: #edca07dd;
+     --te: #ff908a;
+   }
 
-:root{
+   body {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     min-height: 100vh;  /* Changed from height: 100vh to min-height for better mobile handling */
+     background: fixed;
+     background-color: var(--bg);
+     margin: 0;  /* Simplified margins; centering via flex is enough */
+     padding: 10px;  /* Add small padding to prevent edge-touching on mobile */
+     box-sizing: border-box;
+   }
 
---bg:white;
---border:black;
---check: white;
---temp: #809eb9;
---tep2:#edca07dd;
---te:#ff908a;
+   /* Desktop styles (default) */
+   #paper {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     height: max-content;
+     min-height: 100px;
+     width: 50%;
+     background-color: white;
+     margin: 50px;
+     padding: 20px;
+     gap: 10px;
+     border: var(--border) 3px solid;
+   }
 
-}
+   #title {
+     font-size: 3rem;  /* Changed to rem for scalability (50px equivalent, but responsive) */
+     margin: 20px;
+     margin-top: 0px;
+     font-family: Sour Gummy;
+     font-weight: 400;
+     font-style: italic;
+   }
 
-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: fixed;
-    background-color: var(--bg);
-    margin-left: auto;
-    margin-right: auto;
+   #taskInput {
+     height: 30px;
+     border: var(--border) 3px solid;
+     width: 50%;
+     padding: 8px 12px;
+     border-radius: 10px;
+     box-sizing: border-box;
+     font-size: 1em;
+     outline: none;
+   }
 
-}
+   #add {
+     height: 50px;
+     border: var(--border) 3px solid;
+     background-color: white;
+     width: 50%;
+     padding: 8px 12px;
+     border-radius: 10px;
+     box-sizing: border-box;
+     font-size: 125%;
+     outline: none;
+     margin: 20px;
+     margin-top: 0px;
+     margin-bottom: 30px;
+     font-family: Sour Gummy;
+     font-weight: 400;
+     font-style: italic;
+   }
 
-@media only screen and (max-width: 600px) {
-    #paper {
-        width: 300px;
-        padding: 10px;
-        margin:10px;
-    }
-}
+   .task-text {
+     font-size: 1.5rem;  /* Changed to rem (150% equivalent) */
+     color: rgb(100, 100, 100);
+     flex: 1;
+     font-family: Sour Gummy;
+     font-weight: 400;
+     font-style: italic;
+   }
 
-#themeSelect {
+   /* Mobile styles (under 600px) */
+   @media only screen and (max-width: 600px) {
+     #paper {
+       width: 90%;  /* Increased from 300px to 90% for more screen use */
+       padding: 15px;  /* Slightly more padding */
+       margin: 10px;  /* Kept small */
+     }
 
-position: absolute; 
-  top: 5%;           
-  right: 5%;      
-  z-index: 1000; 
-  appearance: none;
-  padding: 5px 10px;
-  border-radius: 8px;
-  border: 2px solid var(--border); /* match your theme border */
-  background-color: white;
-  font-size: 1em;
-  cursor: pointer;
-  width:45px;
-  list-style: none;
-  justify-self:right;;
-}
+     #title {
+       font-size: 2rem;  /* Smaller on mobile (from 3rem) to fit better */
+       margin: 15px;  /* Reduced margin */
+     }
 
+     #taskInput, #add {
+       width: 90%;  /* Wider inputs/buttons on mobile */
+       font-size: 1.1em;  /* Slightly larger text */
+     }
 
-#themeSelect option {
-  color:rgb(100, 100, 100);           /* text color inside dropdown */
-  background-color: white; /* background of each option */
-  border: var(--border) 2px solid;
-  
-}
+     .task-text {
+       font-size: 1.2rem;  /* Smaller tasks for mobile readability */
+     }
 
-#paper{
+     .list {
+       width: 95%;  /* Tasks take more width */
+       gap: 3%;  /* Tighter spacing */
+     }
 
-display: flex; 
-flex-direction: column;
-justify-content: center; 
-align-items: center;  
-height: max-content;
-min-height: 100px;
-width: 50%;
-background-color: white;
-margin: 50px;
-padding: 20px;
-gap: 10px;
-border: var(--border) 3px solid;
-}
+     #themeSelect {
+       top: 2%;  /* Adjust position for smaller screens */
+       right: 2%;
+       width: 50px;  /* Slightly wider for touch */
+     }
+   }
 
-#task-container{
-    width: 100%;
-    max-height: 60vh;  /* limits height for scrolling */
-    overflow-y: auto;  /* only tasks scroll */
-}
-#title{
+   /* Rest of your CSS stays the same... */
+   #themeSelect {
+     position: absolute;
+     top: 5%;
+     right: 5%;
+     z-index: 1000;
+     appearance: none;
+     padding: 5px 10px;
+     border-radius: 8px;
+     border: 2px solid var(--border);
+     background-color: white;
+     font-size: 1em;
+     cursor: pointer;
+     width: 45px;
+     list-style: none;
+     justify-self: right;
+   }
 
-    font-size: 50px;
-    margin: 20px;
-    margin-top: 0px;
-    font-family: Sour Gummy;
-    font-weight: 400;
-    font-style: italic;
+   #themeSelect option {
+     color: rgb(100, 100, 100);
+     background-color: white;
+     border: var(--border) 2px solid;
+   }
 
-}
+   #task-container {
+     width: 100%;
+     max-height: 60vh;
+     overflow-y: auto;
+   }
 
-#taskInput{
+   #taskInput::placeholder {
+     font-family: Sour Gummy;
+     font-weight: 400;
+     font-style: italic;
+   }
 
-    height: 30px;
-    border: var(--border) 3px solid;
-    width: 50%;               
-    padding: 8px 12px;     
-    border-radius: 10px;     
-    box-sizing: border-box;  
-    font-size: 1em;          
-    outline: none; 
-}
+   ul {
+     list-style-type: none;
+   }
 
-#add{
+   .list {
+     width: 80%;
+     display: inline-flex;
+     flex-direction: row;
+     align-items: center;
+     justify-content: flex-start;
+     margin: 10px;
+     border-bottom: rgb(167, 166, 166) 2px solid;
+     gap: 5%;
+   }
 
-    height: 50px;
-    border: var(--border) 3px solid;
-    background-color: white;
-    width: 50%;               
-    padding: 8px 12px;     
-    border-radius: 10px;     
-    box-sizing: border-box;  
-    font-size: 125%;          
-    outline: none; 
-    margin: 20px;
-    margin-top: 0px;
-    margin-bottom: 30px;
-    font-family: Sour Gummy;
-    font-weight: 400;
-    font-style: italic;
+   .task-check {
+     transform: scale(1.25);
+     background-color: rgba(255, 255, 255, 0.75);
+     accent-color: var(--check);
+     content: "/2713";
+     border: var(--border) 3px solid;
+   }
 
-
-}
-#taskInput::placeholder{
-
-    font-family: Sour Gummy;
-    font-weight: 400;
-    font-style: italic;
-
-}
-
-ul{
-
-    list-style-type: none;
-
-}
-.list{
-
-    width: 80%;
-    display: inline-flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    margin:10px;
-    border-bottom: rgb(167, 166, 166) 2px solid ;
-    gap: 5%;
-
-}
-.task-check{
-
-    transform: scale(1.25);
-    background-color: rgba(255,255,255,0.75); 
-    accent-color: var(--check);
-    content:"/2713";
-    border: var(--border) 3px solid ;
-
-}
-.task-text{
- 
-    font-size: 150%;
-    color: rgb(100, 100, 100);
-    flex: 1;
-    font-family: Sour Gummy;
-    font-weight: 400;
-    font-style: italic;
-
-
-}
-.trash-icon{
-    background: none;
-    background-color: none;
-    border: none;
-    font-size: 125%;
-    width: auto;
-    cursor: pointer;
-}
-
-
-
-
-
+   .trash-icon {
+     background: none;
+     background-color: none;
+     border: none;
+     font-size: 125%;
+     width: auto;
+     cursor: pointer;
+   }
+   
