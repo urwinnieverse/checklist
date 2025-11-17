@@ -1,13 +1,25 @@
 <!DOCTYPE HTML >
 <head>
-<title> your color </title>
+<title> CheckList </title>
 <link rel="stylesheet" href="checklist.css">
 <link rel="icon" type="image/x-icon" href="check.png">
 <link href="https://fonts.googleapis.com/css2?family=Jua&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 <meta name="viewport" content="width= device-width, initial-scale=1.0">
 </head>
 <body>
-
+    
+<select id="themeSelect">
+  <option value="" selected>🎨</option>
+  <option value="black">Black</option>
+  <option value="pink">Pink</option>
+  <option value="blue">Blue</option>
+  <option value="green">Green</option>
+  <option value="yellow">Yellow</option>
+  <option value="red">Red</option>
+  <option value="orange">Orange</option>
+  <option value="brown">Brown/Beige</option>
+  <option value="purple">Purple</option>
+</select>  
 <div id="paper">
 
 <label id="title"> CHECKLIST </label> 
@@ -91,6 +103,48 @@ function Getinput() {
     input.focus();      // focus for next task
     saveTasks();        // save
 }
+
+const themes = {
+  black: { bg: "white", border: "black", check:'white' },  
+  pink: { bg: "#FFF1F1", border: "#dda6a9", check: 'pink' },
+  blue: { bg: "#CBDCEB", border: "#809eb9", check: 'blue' },
+  green: { bg: "#F1F3E0", border: "#A1BC98", check:'green' },
+  yellow: { bg: "#FFF8DE", border: "#edca07dd", check:'yellow' },
+  red: { bg: "#ff908a", border: "#BF1A1A", check:'red' },
+  orange: { bg: "#F9B487", border: "#EF7722", check:'orange' },
+  brown: { bg: "#E6D8C3", border: "#7B542F", check:'beige' },
+  purple:{ bg: "#e9e2ff", border: "#8D5F8C", check:'purple' }
+};
+
+const select = document.getElementById("themeSelect");
+
+select.addEventListener("change", (e) => {
+  const theme = themes[e.target.value];
+  if (!theme) return;  // placeholder selected → do nothing
+  for (let key in theme) {
+    document.documentElement.style.setProperty(`--${key}`, theme[key]);
+  }
+
+  localStorage.setItem("selectedTheme", e.target.value);
+
+  select.value = "";
+
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const saved = localStorage.getItem("selectedTheme");
+  if (saved && themes[saved]) {
+    const theme = themes[saved];
+    for (let key in theme) {
+      document.documentElement.style.setProperty(`--${key}`, theme[key]);
+    }
+    select.value = saved; // set dropdown to saved color
+  }
+
+  select.value = "";
+});
+
+
 
 
 // wait for DOM
