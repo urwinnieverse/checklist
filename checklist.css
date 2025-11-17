@@ -86,18 +86,18 @@
    /* Mobile styles (under 600px) */
    @media only screen and (max-width: 600px) {
      #paper {
-       width: 90%;  /* Increased from 300px to 90% for more screen use */
+       width: 80%;  /* Increased from 300px to 90% for more screen use */
        padding: 15px;  /* Slightly more padding */
        margin: 10px;  /* Kept small */
      }
 
      #title {
-       font-size: 2rem;  /* Smaller on mobile (from 3rem) to fit better */
+       font-size: 3rem;  /* Smaller on mobile (from 3rem) to fit better */
        margin: 15px;  /* Reduced margin */
      }
 
      #taskInput, #add {
-       width: 90%;  /* Wider inputs/buttons on mobile */
+       width: 80%;  /* Wider inputs/buttons on mobile */
        font-size: 1.1em;  /* Slightly larger text */
      }
 
@@ -111,8 +111,8 @@
      }
 
      #themeSelect {
-       top: 2%;  /* Adjust position for smaller screens */
-       right: 2%;
+       top: 5%;  /* Adjust position for smaller screens */
+       right: 5%;
        width: 50px;  /* Slightly wider for touch */
      }
    }
@@ -185,3 +185,4 @@
      cursor: pointer;
    }
    
+
