@@ -13,23 +13,23 @@
 body {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;   /* <— FIX */
+    justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh;
     background: fixed;
     background-color: var(--bg);
-    margin:0;
+    margin-left: auto;
+    margin-right: auto;
 
 }
 
 @media (max-width: 600px) {
     #paper {
-        width: 90%;
-        margin-top: 20px;   /* center + remove huge margin */
-        padding: 20px;
+        width: 100%;
+        padding: 10px;
+        margin:10px;
     }
 }
-
 
 #themeSelect {
 
